@@ -1,0 +1,26 @@
+<?php
+/**
+ * @category    MT
+ * @package     MT_Filter
+ * @copyright   Copyright (C) 2008-2013 MagentoThemes.net. All Rights Reserved.
+ * @license     GNU General Public License version 2 or later
+ * @author      MagentoThemes.net
+ * @email       support@magentothemes.net
+ */
+?>
+<div id="<?php echo $this->getHash()?>" class="price-slider">
+    <div id="<?php echo $this->getHash('-min')?>" class="price-slider-handle min"></div>
+    <div id="<?php echo $this->getHash('-max')?>" class="price-slider-handle max"></div>
+    <div id="<?php echo $this->getHash('-span')?>" class="price-slider-span"></div>
+</div>
+<div class="layer-price">
+    <?php echo $this->__('Filter By Price:');?><?php echo $this->getCurrencySymbol()?><span id="layer-price-min"></span>&nbsp;&nbsp;-&nbsp;&nbsp;<?php echo $this->getCurrencySymbol()?><span id="layer-price-max"></span>
+</div>
+<div class="price-help">
+    <p class="std"><i><?php echo $this->__('(Drag slider to change the price range)');?></i></p>
+</div>
+
+<script type="text/javascript">
+    if (!window.mtFilter) window.mtFilter = new MTFilter('mtFilter', {enable:false});
+    window.mtFilter.initPriceFilter(<?php echo $this->getConfig()?>);
+</script>

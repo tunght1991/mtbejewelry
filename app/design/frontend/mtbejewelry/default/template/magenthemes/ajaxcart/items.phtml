@@ -1,0 +1,54 @@
+<?php
+/**
+ *
+ * ------------------------------------------------------------------------------
+ * @category     MT
+ * @package      MT_Themes
+ * ------------------------------------------------------------------------------
+ * @copyright    Copyright (C) 2008-2013 MagentoThemes.net. All Rights Reserved.
+ * @license      GNU General Public License version 2 or later;
+ * @author       MagentoThemes.net
+ * @email        support@magentothemes.net
+ * ------------------------------------------------------------------------------
+ *
+ */
+?>
+<?php
+$config = Mage::getStoreConfig('ajaxcart/ajaxcart_config');
+?>
+<?php
+    $_item = $this->getItem();
+    $isVisibleProduct = $_item->getProduct()->isVisibleInSiteVisibility();
+    $canApplyMsrp = Mage::helper('catalog')->canApplyMsrp($_item->getProduct(), Mage_Catalog_Model_Product_Attribute_Source_Msrp_Type::TYPE_BEFORE_ORDER_CONFIRM);
+?>
+<li class="item">
+    <?php if ($this->hasProductUrl()): ?>
+        <a href="<?php echo $this->getProductUrl()?>" title="<?php echo $this->htmlEscape($this->getProductName()) ?>" class="product-image"><img src="<?php echo $this->getProductThumbnail()->resize(57, 64)->setWatermarkSize('30x10'); ?>" width="64" height="64" alt="<?php echo $this->htmlEscape($this->getProductName()) ?>" /></a>
+    <?php else: ?>
+        <span class="product-image"><img src="<?php echo $this->getProductThumbnail()->resize(57, 64)->setWatermarkSize('30x10'); ?>" width="64" height="64" alt="<?php echo $this->htmlEscape($this->getProductName()) ?>" /></span>
+    <?php endif; ?>
+    <div class="product-details row-fluid show-grid">
+        <p class="product-name clearfix"><?php if ($this->hasProductUrl()): ?><a href="<?php echo $this->getProductUrl() ?>"><?php endif; ?><?php echo $this->htmlEscape($this->getProductName()) ?><?php if ($this->hasProductUrl()): ?></a><?php endif; ?></p>
+		<?php /* <strong><?php echo $this->getQty() ?></strong> x */ ?>
+
+        <?php if ($_options = $this->getOptionList()):?>
+        <div class="truncated">
+          <div class="truncated_full_value">
+            <dl class="item-options">
+                <?php foreach ($_options as $_option) : ?>
+                <dt><?php echo $this->htmlEscape($_option['label']) ?></dt>
+                <dd>
+                    <?php if (is_array($_option['value'])): ?>
+                    <?php echo nl2br(implode("\n", $_option['value'])) ?>
+                    <?php else: ?>
+                    <?php echo $_option['value'] ?>
+                    <?php endif; ?>
+                </dd>
+                <?php endforeach; ?>
+            </dl>
+          </div>
+		  <?php /* <a href="#" onclick="return false;" class="details"><?php echo $this->__('Details') ?></a> */ ?>
+        </div>
+        <?php endif; ?>
+    </div>
+</li>

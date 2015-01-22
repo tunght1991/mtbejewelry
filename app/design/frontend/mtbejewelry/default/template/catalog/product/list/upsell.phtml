@@ -1,0 +1,94 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2012 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<?php
+$_collectionSize = count($this->getItemCollection()->getItems());
+?>
+<?php if($_collectionSize): ?>
+<?php
+$theme = $this->helper('mtbejewelry');
+if($theme->getCfg('product_page/upsell_hover_slider')):
+    $hoverPause = 'true';
+else:
+    $hoverPause = 'false';
+endif;
+?>
+<div class="box-collateral box-up-sell">
+    <h3><?php echo $this->__('You may also be interested in the following product(s)'); ?></h3>
+    <div id="mt-upsell-slide">
+        <div class="nav-wrapper"></div>
+        <div class="itemslider itemslider-responsive itemslider-horizontal">
+            <ul class="slides products-grid">
+                <?php foreach($this->getItemCollection()->getItems() as $_product): //$_link replaced with $_product ?>
+                    <li class="item">
+                        <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->htmlEscape($_product->getName()) ?>" class="product-image">
+                            <img src="<?php echo $this->helper('catalog/image')->init($_product, 'thumbnail')->resize(188,188) ?>" alt="<?php echo $this->htmlEscape($_product->getName()) ?>" />
+                        </a>
+                        <h3 class="product-name"><a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->htmlEscape($_product->getName()) ?>"><?php echo $this->htmlEscape($_product->getName()) ?></a></h3>
+                        <?php echo $this->getPriceHtml($_product, true, '-upsell') ?>
+                        <?php echo $this->getReviewsSummaryHtml($_product, 'short') ?>
+
+                    </li>
+                <?php endforeach; ?>
+            </ul>
+        </div>
+        <script type="text/javascript">
+            decorateTable('upsell-product-table');
+            $mt(function($){
+                var i = 0;
+                $("#product_tabs_upsell_products").on("click",function(){
+                    i = i+1;
+                    if(i==1){
+                        $('#mt-upsell-slide .itemslider').flexslider({
+                            namespace: "",
+                            animation: "slide",
+                            easing: "easeInQuart",
+                            <?php if($timeout = intval($theme->getCfg('product_slider/timeout'))): ?>
+                            slideshowSpeed: <?php echo $timeout; ?>,
+                            animationLoop: true,
+                            <?php else: ?>
+                            slideshow: false,
+                            animationLoop: false,
+                            <?php endif; ?>
+                            <?php if($speed = intval($theme->getCfg('product_slider/speed'))): ?>
+                            animationSpeed: <?php echo $speed; ?>,
+                            <?php endif; ?>
+                            pauseOnHover: <?php echo $hoverPause;?>,
+                            controlNav: false,
+                            controlsContainer: "#mt-upsell-slide .nav-wrapper",
+                            itemWidth: 220,
+                            <?php $maxItems = intval($theme->getCfg('product_page/upsell_count'));?>
+                            minItems: <?php echo $maxItems;?>,
+                            maxItems: <?php echo $maxItems;?>,
+                            move: <?php echo intval($theme->getCfg('product_slider/move_items')); ?>
+                        }).data("showItems", <?php echo $maxItems;?>);
+                    }
+                });
+            });
+        </script>
+    </div>
+</div>
+<?php endif ?>

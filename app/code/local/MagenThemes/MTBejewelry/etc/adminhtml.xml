@@ -1,0 +1,116 @@
+<?xml version="1.0"?>
+<!--
+/**
+ *
+ * @category     MT
+ * @package      MT_Themes
+ *
+ * @copyright    Copyright (C) 2008-2013 MagentoThemes.net. All Rights Reserved.
+ * @license      GNU General Public License version 2 or later;
+ * @author       MagentoThemes.net
+ * @email        support@magentothemes.net
+ *
+ */
+-->
+<config>
+    <menu>
+        <magenthemes translate="title" module="mtbejewelry">
+            <title>MagenThemes</title>
+            <sort_order>71</sort_order>
+            <children>
+                <mtbejewelry translate="title" module="mtbejewelry">
+                    <title>MT Be Jewelry</title>
+                    <children>
+                        <mtbejewelry translate="title" module="mtbejewelry">
+                            <title>Theme Settings</title>
+                            <sort_order>10</sort_order>
+                            <action>adminhtml/system_config/edit/section/mtbejewelry</action>
+                        </mtbejewelry>
+                        <mtbejewelry_design translate="title" module="mtbejewelry">
+                            <title>Theme Design</title>
+                            <sort_order>20</sort_order>
+                            <action>adminhtml/system_config/edit/section/mtbejewelry_design</action>
+                        </mtbejewelry_design>
+                        <mtbejewelry_layout translate="title" module="mtbejewelry">
+                            <title>Theme Layout</title>
+                            <sort_order>30</sort_order>
+                            <action>adminhtml/system_config/edit/section/mtbejewelry_layout</action>
+                        </mtbejewelry_layout>
+                        <mtbejewelry_restore translate="title" module="mtbejewelry">
+                            <title>Theme Restore</title>
+                            <sort_order>40</sort_order>
+                            <action>mtbejewelry/adminhtml_restore</action>
+                        </mtbejewelry_restore>
+                        <less translate="title" module="less">
+                            <title>Less Files</title>
+                            <sort_order>50</sort_order>
+                            <action>less/adminhtml_file/index</action>
+                        </less>
+                        <support translate="title" module="mtbejewelry">
+                            <title><![CDATA[Help & Support]]></title>
+                            <sort_order>60</sort_order>
+                            <action>mtbejewelry/adminhtml_support</action>
+                        </support>
+                    </children>
+                </mtbejewelry>
+            </children>
+        </magenthemes>
+    </menu>
+    <acl>
+        <resources>
+            <all>
+                <title>Allow Everything</title>
+            </all>
+            <admin>
+                <children>
+                    <system>
+                    <children>
+                        <config>
+                            <children>
+                                <mtbejewelry translate="title" module="mtbejewelry">
+                                    <title>Theme Settings</title>
+                                    <sort_order>1</sort_order>
+                                </mtbejewelry>
+                                <mtbejewelry_design translate="title" module="mtbejewelry">
+                                    <title>Theme Design</title>
+                                    <sort_order>1</sort_order>
+                                </mtbejewelry_design>
+                                <mtbejewelry_layout translate="title" module="mtbejewelry">
+                                    <title>Theme Layout</title>
+                                    <sort_order>1</sort_order>
+                                </mtbejewelry_layout>
+                            </children>
+                        </config>
+                    </children>
+                    </system>
+                    <magenthemes translate="title" module="mtbejewelry">
+                        <title>MagenThemes</title>
+                        <sort_order>71</sort_order>
+                        <children>
+                            <mtbejewelry translate="title" module="mtbejewelry">
+                                <title>MT Be Jewelry</title>
+                                <children>
+                                    <mtbejewelry translate="title" module="mtbejewelry">
+                                        <title>Theme Settings</title>
+                                        <sort_order>1</sort_order>
+                                        <action>adminhtml/system_config/edit/section/mtbejewelry</action>
+                                    </mtbejewelry>
+                                    <mtbejewelry_design translate="title" module="mtbejewelry">
+                                        <title>Theme Design</title>
+                                        <sort_order>2</sort_order>
+                                        <action>adminhtml/system_config/edit/section/mtbejewelry_design</action>
+                                    </mtbejewelry_design>
+                                    <mtbejewelry_layout translate="title" module="mtbejewelry">
+                                        <title>Theme Layout</title>
+                                        <sort_order>3</sort_order>
+                                        <action>adminhtml/system_config/edit/section/mtbejewelry_layout</action>
+                                    </mtbejewelry_layout>
+                                </children>
+                            </mtbejewelry>
+                        </children>
+                    </magenthemes>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>
