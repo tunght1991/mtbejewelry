@@ -479,6 +479,7 @@ a:hover { text-decoration:none; }
   display:block;
   overflow:hidden;
 }
+.mt-ajax-checkout a { float:left; }
 .mt-ajax-checkout a.checkout {
   background-color:#cc9900;
   font-size:12px;

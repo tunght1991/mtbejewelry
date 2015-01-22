@@ -1,3 +1,7 @@
+/*================BASE CONTAINER==============*/
+.rtl input[type="checkbox"] + label,.rtl input[type="radio"] + label{text-align: right;}
+.rtl input[type="checkbox"] + label:before,.rtl input[type="radio"] + label:before{float: right;}
+
 /*=============================TOP HEADER=====================================*/
 body.rtl .owl-item{direction: ltr;}
 .rtl .pull-left{float: right !important;}
@@ -23,6 +27,10 @@ body.rtl .owl-item{direction: ltr;}
 .rtl .icon-cart{padding: 0 16px 0 0;}
 .rtl .sbHolder.lang .sbOptions{right: 112px;left: auto;}
 .rtl .sbHolder.currency .sbOptions{right: 112px;left: auto;}
+.rtl .mt-ajax-checkout a.checkout,.rtl .mt-ajax-checkout a{float: right;}
+.rtl .block-login .block-content .actions{float: right;}
+.rtl .sbHolder.lang,.rtl .sbHolder.currency{padding-right: 17px;padding-left: 0;}
+.rtl .sbHolder.lang:hover,.rtl .sbHolder.currency:hover{padding-right: 26px;padding-left: 0;}
 /*=============================TOP MENU============================*/
 .rtl #mtnav li{float: right;}
 /*=============================SLIDER============================*/
