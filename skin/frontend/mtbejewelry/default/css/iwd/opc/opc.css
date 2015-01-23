@@ -318,7 +318,7 @@
 .review-menu-block a.review-total.open span{float:right;color:#ffffff;font-size:18px;text-transform:uppercase;background: url(images/cart-arrow-close.png) no-repeat scroll 100% 18px transparent;margin-right:13px;padding-right:22px;line-height: 44px;}
 .review-menu-block a.review-total.open ~ .polygon{display:block}
 .opc-wrapper-opc #opc-review-block{width: 30%;display: block;float:right;}
-.opc-wrapper-opc #opc-review-block h3.review-title{color:#cc9900;font-size:16px;border-bottom:1px solid #b6b6b6;line-height:1; padding-bottom:8px}
+.opc-wrapper-opc #opc-review-block h3.review-title{color:#cc9900;font-size:16px;border-bottom:1px solid #d6d6d6;line-height:1; padding-bottom:8px}
 
 .opc-wrapper-opc .opc-data-table{width:100%;}
 .opc-wrapper-opc .opc-data-table thead th{color:#1c1c1c; font-size:15px;padding:0 15px 7px;border-bottom:1px solid #eaeaea}
@@ -326,15 +326,15 @@
 .opc-wrapper-opc .opc-data-table thead tr th:last-child{padding-right:0}
 .opc-wrapper-opc .opc-data-table thead tr th:first-child,.opc-wrapper-opc .opc-data-table tbody tr td:first-child{padding-left:0}
 
-.opc-wrapper-opc .opc-data-table tbody td{padding:14px;border-bottom:1px solid #eaeaea;color:#676767; font-size:14px;font-weight:400}
+.opc-wrapper-opc .opc-data-table tbody td{padding:14px;border-bottom:1px solid #eaeaea;color:#000000; font-size:14px;font-weight:400}
 
 .opc-wrapper-opc .opc-data-table td.last{padding-right:0}
-.opc-wrapper-opc .opc-data-table tbody td .price{color:#676767; font-size:14px;font-weight:400}
-.opc-wrapper-opc .opc-data-table tbody td h3{color:#676767; font-size:14px;font-weight:400;border:none;margin:0;padding:0;line-height:1.35em;letter-spacing: normal}
-.opc-wrapper-opc .opc-data-table tfoot td{padding:10px 0;border-bottom:1px solid #eaeaea;color:#676767; font-size:14px;font-weight:normal;vertical-align: middle;}
-.opc-wrapper-opc .opc-data-table tfoot td strong .price{color:#3f3f3f;font-size:14px;}
-.opc-wrapper-opc .opc-data-table tfoot th{padding:10px 0;border-bottom:1px solid #eaeaea;color:#676767; font-size:14px;font-weight:normal;vertical-align: middle;}
-.opc-wrapper-opc .opc-data-table tfoot th strong .price{color:#3f3f3f;font-size:14px;}
+.opc-wrapper-opc .opc-data-table tbody td .price{color:#000000; font-size:15px;font-weight:400}
+.opc-wrapper-opc .opc-data-table tbody td h3{color:#000000; font-size:14px;font-weight:400;border:none;margin:0;padding:0;line-height:1.35em;letter-spacing: normal}
+.opc-wrapper-opc .opc-data-table tfoot td{padding:10px 0;border-bottom:1px solid #d6d6d6;color:#000000; font-size:14px;font-weight:normal;vertical-align: middle;}
+.opc-wrapper-opc .opc-data-table tfoot td strong .price{color:#000000;font-size:15px;}
+.opc-wrapper-opc .opc-data-table tfoot th{padding:10px 0;border-bottom:1px solid #d6d6d6;color:#000000; font-size:14px;font-weight:normal;vertical-align: middle;}
+.opc-wrapper-opc .opc-data-table tfoot th strong .price{color:#000000;font-size:14px;}
 .opc-wrapper-opc .opc-data-table tfoot tr:last-child td{border-bottom:none}
 .opc-wrapper-opc .opc-data-table .item-options{font-size:11px}
 .opc-wrapper-opc .opc-data-table .cell-label{display:none}
